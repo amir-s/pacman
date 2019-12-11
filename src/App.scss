@@ -1,0 +1,69 @@
+$border-radius: 10px;
+
+* {
+  box-sizing: content-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cell {
+  background: black;
+}
+
+.wall-h {
+  height: 100%;
+  width: 100%;
+  border-top: 1px solid red;
+  transform: translate(0, 50%);
+}
+
+.wall-v {
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid red;
+  transform: translate(50%);
+}
+
+.wall-ur {
+  width: 50%;
+  height: 50%;
+  transform: translate(0, 100%);
+  border-right: 1px solid red;
+  border-top: 1px solid red;
+  border-radius: 0 $border-radius 0 0;
+}
+
+.wall-rb {
+  width: 50%;
+  height: 50%;
+
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  border-radius: 0 0 $border-radius 0;
+}
+
+.wall-bl {
+  width: 50%;
+  height: 50%;
+
+  border-left: 1px solid red;
+  border-bottom: 1px solid red;
+  border-radius: 0 0 0 $border-radius;
+
+  transform: translate(100%, 0);
+}
+
+.wall-lu {
+  width: 50%;
+  height: 50%;
+
+  border-top: 1px solid red;
+  border-left: 1px solid red;
+  border-radius: $border-radius 0 0 0;
+
+  transform: translate(100%, 100%);
+}
