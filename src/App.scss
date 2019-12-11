@@ -1,7 +1,7 @@
 $border-radius: 10px;
 
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 .App {
@@ -12,58 +12,59 @@ $border-radius: 10px;
 
 .cell {
   background: black;
+  display: flex;
 }
 
 .wall-h {
-  height: 100%;
+  display: flex;
+  align-self: center;
   width: 100%;
-  border-top: 1px solid red;
-  transform: translate(0, 50%);
+  height: 1px;
+  background: red;
 }
 
 .wall-v {
-  width: 100%;
+  width: 1px;
   height: 100%;
-  border-left: 1px solid red;
-  transform: translate(50%);
+  background: red;
+  margin: 0 auto;
 }
 
 .wall-ur {
-  width: 50%;
-  height: 50%;
-  transform: translate(0, 100%);
+  display: flex;
+  align-self: flex-end;
+  width: 51%;
+  height: 51%;
   border-right: 1px solid red;
   border-top: 1px solid red;
   border-radius: 0 $border-radius 0 0;
 }
 
 .wall-rb {
-  width: 50%;
-  height: 50%;
-
+  width: 51%;
+  height: 51%;
   border-right: 1px solid red;
   border-bottom: 1px solid red;
   border-radius: 0 0 $border-radius 0;
 }
 
 .wall-bl {
+  display: flex;
   width: 50%;
-  height: 50%;
-
+  height: 51%;
+  margin-left: auto;
   border-left: 1px solid red;
   border-bottom: 1px solid red;
   border-radius: 0 0 0 $border-radius;
-
-  transform: translate(100%, 0);
 }
 
 .wall-lu {
-  width: 50%;
-  height: 50%;
-
+  display: flex;
+  align-self: flex-end;
+  width: 51%;
+  height: 51%;
+  margin-left: auto;
   border-top: 1px solid red;
   border-left: 1px solid red;
   border-radius: $border-radius 0 0 0;
-
-  transform: translate(100%, 100%);
 }
