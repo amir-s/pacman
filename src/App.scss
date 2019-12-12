@@ -8,11 +8,16 @@ $border-radius: 10px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .cell {
   background: black;
   display: flex;
+}
+.cell-float {
+  position: absolute;
+  -webkit-transition: all 0.4s linear;
 }
 
 .wall-h {
@@ -67,4 +72,10 @@ $border-radius: 10px;
   border-top: 1px solid red;
   border-left: 1px solid red;
   border-radius: $border-radius 0 0 0;
+}
+
+.pacman {
+  background: yellow;
+  width: 100%;
+  height: 100%;
 }

@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
-const UNIT = 50;
+const UNIT = 35;
 const map = `
-###############
-###############
-##           ##
-##    ##     ##
-##    ##     ##
-##           ##
-###############
-###############
+######################
+######################
+##                  ##
+##  ###  #########  ##
+##  ###  #########  ##
+##       ##   ####  ##
+##  #######     ##  ##
+##  #######     ##  ##
+##  ##              ##
+##  ##              ##
+##         ######   ##
+##         ######   ##
+##         ######   ##
+##    ##       ##   ##
+##    ##       ##   ##
+##             ##   ##
+######################
+######################
 `
   .split("\n")
   .slice(1, -1)
@@ -21,7 +31,23 @@ const border = (i, j) => {
   return map[i][j] === "#";
 };
 
-const App: React.FC = () => {
+const Pacman = ({ i, j }) => {
+  const style = {
+    width: `${UNIT}px`,
+    height: `${UNIT}px`,
+    top: `${i * UNIT}px`,
+    left: `${j * UNIT}px`
+  };
+
+  return (
+    <div className="cell-float" style={style}>
+      <div className="pacman"></div>
+    </div>
+  );
+};
+
+const App = () => {
+  const [pacman, setPacman] = useState({ i: 2, j: 2 });
   const cells = [];
   for (let i = 0; i < map.length - 0; i++) {
     for (let j = 0; j < map[i].length - 0; j++) {
@@ -96,9 +122,18 @@ const App: React.FC = () => {
     width: `${map[0].length * UNIT}px`,
     height: `${map.length * UNIT}px`
   };
+
+  setTimeout(() => {
+    setPacman({
+      i: pacman.i,
+      j: pacman.j + 1
+    });
+  }, 500);
+
   return (
     <div className="App" style={style}>
       {cells}
+      <Pacman i={pacman.i} j={pacman.j}></Pacman>
     </div>
   );
 };
