@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Pacman} from './components/Pacman';
 import "./App.scss";
 const UNIT = 35;
 const map = `
@@ -31,7 +32,7 @@ const border = (i, j) => {
   return map[i][j] === "#";
 };
 
-const Pacman = ({ i, j }) => {
+const PacmanCell = ({ i, j }) => {
   const style = {
     width: `${UNIT}px`,
     height: `${UNIT}px`,
@@ -41,7 +42,7 @@ const Pacman = ({ i, j }) => {
 
   return (
     <div className="cell-float" style={style}>
-      <div className="pacman"></div>
+      <Pacman />
     </div>
   );
 };
@@ -133,7 +134,7 @@ const App = () => {
   return (
     <div className="App" style={style}>
       {cells}
-      <Pacman i={pacman.i} j={pacman.j}></Pacman>
+      <PacmanCell i={pacman.i} j={pacman.j}></PacmanCell>
     </div>
   );
 };
