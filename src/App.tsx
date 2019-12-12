@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import {FloatingCell} from './components/FloatingCell';
 import {Pacman} from './components/Pacman';
 import "./App.scss";
+
 const UNIT = 35;
 const map = `
 ######################
@@ -30,21 +32,6 @@ const border = (i, j) => {
   if (i < 0 || j < 0) return false;
   if (i >= map.length || j >= map[0].length) return false;
   return map[i][j] === "#";
-};
-
-const PacmanCell = ({ i, j }) => {
-  const style = {
-    width: `${UNIT}px`,
-    height: `${UNIT}px`,
-    top: `${i * UNIT}px`,
-    left: `${j * UNIT}px`
-  };
-
-  return (
-    <div className="cell-float" style={style}>
-      <Pacman />
-    </div>
-  );
 };
 
 const App = () => {
@@ -134,7 +121,9 @@ const App = () => {
   return (
     <div className="App" style={style}>
       {cells}
-      <PacmanCell i={pacman.i} j={pacman.j}></PacmanCell>
+      <FloatingCell offsetTop={pacman.i} offsetLeft={pacman.j} unit={UNIT}>
+        <Pacman direction="top"/>
+      </FloatingCell>
     </div>
   );
 };

@@ -6,6 +6,18 @@
   position: relative;
   margin-top: -25%;
   margin-left: -25%;
+
+  &.pacman-top {
+    transform: rotate(-90deg);
+  }
+
+  &.pacman-bottom {
+    transform: rotate(90deg);
+  }
+
+  &.pacman-left {
+    transform: rotateY(180deg);
+  }
 }
 
 .pacman__eye {
@@ -21,7 +33,7 @@
 .pacman__mouth {
   background: #000;
   position: absolute;
-  width: 100%;
+  width: 101%;
   height: 100%;
   clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
   animation-name: eat;
