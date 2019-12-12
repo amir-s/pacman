@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {FloatingCell} from './components/FloatingCell';
 import {Pacman} from './components/Pacman';
 import {Ghost} from './components/Ghost';
@@ -120,16 +120,16 @@ const App = () => {
       <FloatingCell offsetTop={position.y} offsetLeft={position.x} unit={UNIT}>
         <Pacman direction={direction}/>
       </FloatingCell>
-      <FloatingCell offsetTop={position.y} offsetLeft={5} unit={UNIT}>
+      <FloatingCell offsetTop={2} offsetLeft={5} unit={UNIT}>
         <Ghost name='clyde'/>
       </FloatingCell>
-      <FloatingCell offsetTop={position.y} offsetLeft={7} unit={UNIT}>
+      <FloatingCell offsetTop={2} offsetLeft={7} unit={UNIT}>
         <Ghost name='blinky'/>
       </FloatingCell>
-      <FloatingCell offsetTop={position.y} offsetLeft={9} unit={UNIT}>
+      <FloatingCell offsetTop={2} offsetLeft={9} unit={UNIT}>
         <Ghost name='pinky'/>
       </FloatingCell>
-      <FloatingCell offsetTop={position.y} offsetLeft={11} unit={UNIT}>
+      <FloatingCell offsetTop={2} offsetLeft={11} unit={UNIT}>
         <Ghost name='inky'/>
       </FloatingCell>
     </div>
