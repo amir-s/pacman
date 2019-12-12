@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {FloatingCell} from './components/FloatingCell';
 import {Pacman} from './components/Pacman';
+import {Ghost} from './components/Ghost';
 import {useKeyboard} from './components/KeyboardHandler';
 import "./App.scss";
 
@@ -118,6 +119,18 @@ const App = () => {
       {cells}
       <FloatingCell offsetTop={position.y} offsetLeft={position.x} unit={UNIT}>
         <Pacman direction={direction}/>
+      </FloatingCell>
+      <FloatingCell offsetTop={position.y} offsetLeft={5} unit={UNIT}>
+        <Ghost name='clyde'/>
+      </FloatingCell>
+      <FloatingCell offsetTop={position.y} offsetLeft={7} unit={UNIT}>
+        <Ghost name='blinky'/>
+      </FloatingCell>
+      <FloatingCell offsetTop={position.y} offsetLeft={9} unit={UNIT}>
+        <Ghost name='pinky'/>
+      </FloatingCell>
+      <FloatingCell offsetTop={position.y} offsetLeft={11} unit={UNIT}>
+        <Ghost name='inky'/>
       </FloatingCell>
     </div>
   );

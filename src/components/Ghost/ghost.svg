@@ -1,0 +1,7 @@
+<svg viewBox="0 0 475 521" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M474.798 250C474.932 246.684 475 243.35 475 240C475 107.452 368.668 0 237.5 0C106.332 0 0 107.452 0 240C0 243.35 0.0679131 246.684 0.202425 250H0V521H0.595963L1.04822 520.25H0.44521L61.5 419L121.603 518.672L180.5 421L239.199 518.342L298.5 420L356.5 516.184L414.5 420L475 520.33V250H474.798Z" fill="currentColor"/>
+<ellipse cx="156.5" cy="178" rx="51.5" ry="48" fill="white"/>
+<ellipse cx="142.5" cy="179.5" rx="20.5" ry="19.5" fill="black"/>
+<ellipse cx="299.5" cy="178" rx="51.5" ry="48" fill="white"/>
+<ellipse cx="285.5" cy="179.5" rx="20.5" ry="19.5" fill="black"/>
+</svg>

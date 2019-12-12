@@ -1,0 +1,44 @@
+.ghost {
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  margin-left: -5px;
+  animation-name: float;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+.clyde {
+  color: #F2A43B
+}
+
+.blinky {
+  color: #EA3F25;
+}
+
+.pinky {
+  color: #F2B4B2;
+}
+
+.inky {
+  color: #65DCDD;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  75% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
