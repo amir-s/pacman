@@ -14,14 +14,17 @@
 
 .blinky {
   color: #EA3F25;
+  animation-delay: 100ms
 }
 
 .pinky {
   color: #F2B4B2;
+  animation-delay: 200ms;
 }
 
 .inky {
   color: #65DCDD;
+  animation-delay: 300ms
 }
 
 @keyframes float {
