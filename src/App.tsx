@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {FloatingCell} from './components/FloatingCell';
 import {Pacman} from './components/Pacman';
+import {useKeyboard} from './components/KeyboardHandler';
 import "./App.scss";
 
 const UNIT = 35;
@@ -35,7 +36,7 @@ const border = (i, j) => {
 };
 
 const App = () => {
-  const [pacman, setPacman] = useState({ i: 2, j: 2 });
+  const {position, direction} = useKeyboard({ x: 2, y: 2 });
   const cells = [];
   for (let i = 0; i < map.length - 0; i++) {
     for (let j = 0; j < map[i].length - 0; j++) {
@@ -111,18 +112,12 @@ const App = () => {
     height: `${map.length * UNIT}px`
   };
 
-  setTimeout(() => {
-    setPacman({
-      i: pacman.i,
-      j: pacman.j + 1
-    });
-  }, 500);
 
   return (
     <div className="App" style={style}>
       {cells}
-      <FloatingCell offsetTop={pacman.i} offsetLeft={pacman.j} unit={UNIT}>
-        <Pacman direction="top"/>
+      <FloatingCell offsetTop={position.y} offsetLeft={position.x} unit={UNIT}>
+        <Pacman direction={direction}/>
       </FloatingCell>
     </div>
   );
