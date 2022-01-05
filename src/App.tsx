@@ -1,8 +1,8 @@
-import React from "react";
-import {FloatingCell} from './components/FloatingCell';
-import {Pacman} from './components/Pacman';
-import {Ghost} from './components/Ghost';
-import {useKeyboard} from './components/KeyboardHandler';
+import React, { useState } from "react";
+import { FloatingCell } from "./components/FloatingCell";
+import { Pacman } from "./components/Pacman";
+import { Ghost } from "./components/Ghost";
+import { useKeyboard } from "./components/KeyboardHandler";
 import "./App.scss";
 
 const UNIT = 35;
@@ -19,7 +19,7 @@ const map = `
 ##  ##              ##
 ##         ######   ##
 ##         ######   ##
-##         ######   ##
+##    ##   ######   ##
 ##    ##       ##   ##
 ##    ##       ##   ##
 ##             ##   ##
@@ -37,7 +37,7 @@ const border = (i, j) => {
 };
 
 const App = () => {
-  const {position, direction} = useKeyboard({ x: 2, y: 2 });
+  const { position, direction } = useKeyboard({ x: 2, y: 2 });
   const cells = [];
   for (let i = 0; i < map.length - 0; i++) {
     for (let j = 0; j < map[i].length - 0; j++) {
@@ -112,25 +112,32 @@ const App = () => {
     width: `${map[0].length * UNIT}px`,
     height: `${map.length * UNIT}px`
   };
+  const [pos, setPos] = useState({ i: 2, j: 2 });
 
+  setTimeout(() => {
+    setPos({
+      i: pos.i,
+      j: pos.j + 1
+    });
+  }, 500);
 
   return (
     <div className="App" style={style}>
       {cells}
       <FloatingCell offsetTop={position.y} offsetLeft={position.x} unit={UNIT}>
-        <Pacman direction={direction}/>
+        <Pacman direction={direction} />
       </FloatingCell>
       <FloatingCell offsetTop={2} offsetLeft={5} unit={UNIT}>
-        <Ghost name='clyde'/>
+        <Ghost name="clyde" />
       </FloatingCell>
       <FloatingCell offsetTop={2} offsetLeft={7} unit={UNIT}>
-        <Ghost name='blinky'/>
+        <Ghost name="blinky" />
       </FloatingCell>
       <FloatingCell offsetTop={2} offsetLeft={9} unit={UNIT}>
-        <Ghost name='pinky'/>
+        <Ghost name="pinky" />
       </FloatingCell>
-      <FloatingCell offsetTop={2} offsetLeft={11} unit={UNIT}>
-        <Ghost name='inky'/>
+      <FloatingCell offsetTop={2} offsetLeft={pos.j} unit={UNIT}>
+        <Ghost name="inky" />
       </FloatingCell>
     </div>
   );
